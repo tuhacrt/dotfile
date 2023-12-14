@@ -2,26 +2,20 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Set the name of the static .zsh plugins file antidote will generate.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
 zsh_plugins=${ZDOTDIR:-~}/.zsh_plugins.zsh
 
-# Ensure you have a .zsh_plugins.txt file where you can add plugins.
 [[ -f ${zsh_plugins:r}.txt ]] || touch ${zsh_plugins:r}.txt
 
-# Lazy-load antidote.
 fpath+=(${ZDOTDIR:-~}/.antidote)
 autoload -Uz $fpath[-1]/antidote
 
-# Generate static file in a subshell when .zsh_plugins.txt is updated.
 if [[ ! $zsh_plugins -nt ${zsh_plugins:r}.txt ]]; then
   (antidote bundle <${zsh_plugins:r}.txt >|$zsh_plugins)
 fi
 
-# Source your static plugins file.
 source $zsh_plugins
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # fzf
 # $(brew --prefix)/opt/fzf/install
