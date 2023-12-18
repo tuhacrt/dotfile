@@ -47,6 +47,64 @@ local plugins = {
     end,
   },
 
+  {
+    "kylechui/nvim-surround",
+    version = "main", -- Use `*` for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup({})
+    end
+  },
+
+  {
+    'smoka7/hop.nvim',
+    version = "*",
+    -- keys = {
+    --   {
+    --     ",",
+    --     function()
+    --       require("hop").hint_words()
+    --     end,
+    --     mode = { "n", "x", "o" },
+    --   },
+    --   {
+    --     "s",
+    --     function()
+    --       require("hop").hint_char2()
+    --     end,
+    --     mode = { "n", "x", "o" },
+    --   },
+    --   {
+    --     "f",
+    --     function()
+    --       require("hop").hint_char1 ({
+    --         direction = require("hop.hint").HintDirection.AFTER_CURSOR,
+    --         current_line_only = true,
+    --       })
+    --     end,
+    --     mode = { "n", "x", "o" },
+    --   },
+    --   { "F",
+    --     function()
+    --       require("hop").hint_char1 ({
+    --         direction = require("hop.hint").HintDirection.BEFORE_CURSOR,
+    --         current_line_only = true,
+    --       })
+    --     end,
+    --     mode = { "n", "x", "o" },
+    --   },
+    -- },
+    opts = {
+      multi_windows = true,
+      keys = "htnsueoaidgcrlypmbkjvx",
+      uppercase_labels = true,
+      -- reverse_distribution = true,
+    },
+    config = function()
+      require("custom.configs.hop").setup()
+    end
+  }
+
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
