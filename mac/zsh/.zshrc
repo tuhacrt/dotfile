@@ -22,6 +22,7 @@ source $zsh_plugins
 
 alias vi="nvim"
 alias vim="nvim"
+alias gf="git fetch"
 alias gb="git branch"
 alias gp="git pull"
 alias gl="git log --pretty=oneline"

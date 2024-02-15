@@ -2,5 +2,5 @@
 cp -r ~/.config/nvim/lua/custom ./nvim
 
 # zsh
-cp ~/.zshrc ./zsh
-cp ~/.zsh_plugins.txt ./zsh
+cp ~/.zshrc ./mac/zsh
+cp ~/.zsh_plugins.txt ./mac/zsh
