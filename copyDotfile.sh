@@ -1,5 +1,5 @@
 # nvim
-cp -r ~/.config/nvim/lua/custom ./nvim
+cp -r ~/.config/nvim/lua ./nvim
 
 # zsh
 cp ~/.zshrc ./mac/zsh
