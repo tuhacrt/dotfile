@@ -17,19 +17,17 @@ fi
 
 source $zsh_plugins
 
-# fzf
-# $(brew --prefix)/opt/fzf/install
-
 alias vi="nvim"
 alias vim="nvim"
+alias gb="git branch -vv"
 alias gf="git fetch"
-alias gb="git branch"
 alias gp="git pull"
 alias gl="git log --pretty=oneline"
 alias gs="git status"
 alias gc="git checkout"
-alias ls="exa -a -l"
-alias l="exa"
+alias ls="eza -l -a -g --icons"
+alias ll="eza -l -g --icons"
+alias l="eza --icons"
 alias cat="bat"
 alias c="clear"
 alias b="brew update && brew upgrade && brew cleanup"
@@ -48,5 +46,5 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 eval "$(zoxide init zsh --cmd z)"
 
 # fnm
-eval "$(fnm env --use-on-cd)"
+eval "$(fnm env --use-on-cd --corepack-enabled)"
 
